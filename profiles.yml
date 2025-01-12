@@ -3,11 +3,11 @@ dw_dbt_preco_commodities:
     outputs:
         dev:
             type: postgres
-            host: "{{ env_var('DB_PROD_HOST') }}"
-            port: "{{ env_var('DB_PROD_PORT') }}"
-            dbname: "{{ env_var('DB_PROD_NAME') }}"
-            schema: "{{ env_var('DB_PROD_SCHEMA') }}"
-            user: "{{ env_var('DB_PROD_USER') }}"
-            pass: "{{ env_var('DB_PROD_PASS') }}"
-            threads: "{{ env_var('DB_PROD_THREADS') }}"
+            host: "{{ env_var('DB_HOST') }}"
+            port: "{{ env_var('DB_PORT') | int }}"
+            dbname: "{{ env_var('DB_NAME') }}"
+            schema: "{{ env_var('DB_SCHEMA') }}"
+            user: "{{ env_var('DB_USER') }}"
+            pass: "{{ env_var('DB_PASS') }}"
+            threads: "{{ env_var('DB_THREADS') | int }}"
             keepalives_idle: 0

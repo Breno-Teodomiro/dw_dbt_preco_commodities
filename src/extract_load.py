@@ -8,16 +8,20 @@ from dotenv import load_dotenv
 
 # ========== Import variaveis de ambiente  ========== #
 
+# Carregar variáveis de ambiente do arquivo .env
 load_dotenv()
 
-DB_HOST = os.getenv('DB_PROD_HOST')
-DB_PORT = os.getenv('DB_PROD_PORT')
-DB_NAME = os.getenv('DB_PROD_NAME')
-DB_USER = os.getenv('DB_PROD_USER')
-DB_PASS = os.getenv('DB_PROD_PASS')
-DB_SCHEMA = os.getenv('DB_PROD_SCHEMA')
+# Obter variáveis de ambiente
+DB_HOST = os.getenv('DB_HOST')
+DB_PORT = os.getenv('DB_PORT')
+DB_NAME = os.getenv('DB_NAME')
+DB_USER = os.getenv('DB_USER')
+DB_PASS = os.getenv('DB_PASS')
 
-DATABASE_URL = f'postgresql://{DB_USER}:{DB_PASS}@{DB_HOST}:{DB_PORT}/{DB_NAME}'
+if not all([DB_HOST, DB_PORT, DB_NAME, DB_USER, DB_PASS]):
+    raise ValueError("Uma ou mais variáveis de ambiente do banco de dados não estão definidas no arquivo .env")
+
+DATABASE_URL = f"postgresql://{DB_USER}:{DB_PASS}@{DB_HOST}:{DB_PORT}/{DB_NAME}"
 
 engine = create_engine(DATABASE_URL)
 

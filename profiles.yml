@@ -1,7 +1,7 @@
 dw_dbt_preco_commodities:
-    target: prod
+    target: dev
     outputs:
-        prod:
+        dev:
             type: postgres
             host: "{{ env_var('DB_PROD_HOST') }}"
             port: "{{ env_var('DB_PROD_PORT') }}"

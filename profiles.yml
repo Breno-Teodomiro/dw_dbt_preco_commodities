@@ -1,0 +1,13 @@
+dw_dbt_preco_commodities:
+    target: prod
+    outputs:
+        prod:
+            type: postgres
+            host: "{{ env_var('DB_PROD_HOST') }}"
+            port: "{{ env_var('DB_PROD_PORT') }}"
+            dbname: "{{ env_var('DB_PROD_NAME') }}"
+            schema: "{{ env_var('DB_PROD_SCHEMA') }}"
+            user: "{{ env_var('DB_PROD_USER') }}"
+            pass: "{{ env_var('DB_PROD_PASS') }}"
+            threads: "{{ env_var('DB_PROD_THREADS') }}"
+            keepalives_idle: 0

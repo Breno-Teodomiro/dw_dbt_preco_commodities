@@ -1,5 +1,6 @@
 -- Import
-with source as (
+with 
+source as (
      select
             date
           , symbol
@@ -12,7 +13,7 @@ with source as (
 Renamed as (
      select
             cast(date as date) as data
-          , symbol as simbolo
+          , symbol as ticker
           , action as acao
           , quantity as quantidade
        from source

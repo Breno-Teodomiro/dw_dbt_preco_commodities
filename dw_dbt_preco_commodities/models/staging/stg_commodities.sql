@@ -1,5 +1,6 @@
 -- Import
-with source as (
+with 
+source as (
      select
             "Data"
           , "Close"

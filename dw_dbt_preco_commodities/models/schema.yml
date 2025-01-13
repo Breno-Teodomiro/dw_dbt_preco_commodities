@@ -1,0 +1,33 @@
+version: 2
+
+sources:
+    - name: bd_btc
+      schema: public
+      tables:
+          - name: commodities
+            description: "Tabela de preços históricos de commodities"
+            columns:
+                - name: Data
+                  description: "Data da cotação"
+                  tests:
+                      - not_null
+                - name: Close
+                  description: "Preço de fechamento"
+                  tests:
+                      - not_null
+                - name: simbolo
+                  description: "Símbolo da commodity"
+                  tests:
+                      - not_null
+
+          - name: movimentacao_commodities
+            description: "Tabela seed"
+            columns:
+                - name: date
+                  description: "Data da Transação"
+                - name: symbol
+                  description: "Simbolo da commodity"
+                - name: action
+                  description: "Tipo de transação (buy/sell)"
+                - name: quantity
+                  description: "Quantidade da transação"

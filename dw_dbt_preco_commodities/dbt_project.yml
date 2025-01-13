@@ -30,3 +30,4 @@ clean-targets: # directories to be removed by `dbt clean`
 models:
     dw_dbt_preco_commodities:
         # Config indicated by + and applies to all files under models/example/
+        +materialized: view

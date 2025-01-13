@@ -1,0 +1,24 @@
+version: 2
+
+models: # View ou Table
+    - name: commodities
+      description: "Tabela de preços históricos de commodities"
+      columns:
+          - name: Data
+            description: "Data da cotação"
+          - name: Close
+            description: "Preço de fechamento"
+          - name: simbolo
+            description: "Símbolo da commodity"
+
+    - name: movimentacao_commodities
+      description: "Tabela seed"
+      columns:
+          - name: date
+            description: "Data da Transação"
+          - name: symbol
+            description: "Simbolo da commodity"
+          - name: action
+            description: "Tipo de transação (buy/sell)"
+          - name: quantity
+            description: "Quantidade da transação"

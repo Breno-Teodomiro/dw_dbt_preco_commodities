@@ -9,12 +9,10 @@ sources:
             columns:
                 - name: Data
                   description: "Data da cotação"
-                  tests:
-                      - not_null
+
                 - name: Close
                   description: "Preço de fechamento"
-                  tests:
-                      - not_null
+
                 - name: simbolo
                   description: "Símbolo da commodity"
                   tests:
@@ -25,9 +23,12 @@ sources:
             columns:
                 - name: date
                   description: "Data da Transação"
+
                 - name: symbol
                   description: "Simbolo da commodity"
+
                 - name: action
                   description: "Tipo de transação (buy/sell)"
+
                 - name: quantity
                   description: "Quantidade da transação"

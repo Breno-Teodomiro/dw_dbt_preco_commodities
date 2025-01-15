@@ -33,7 +33,7 @@ joined as (
        from commodities c
   inner join movimentacao m
           on c.data = m.data
-         --and c.ticker = m.ticker
+         and c.ticker = m.ticker
 ),
 
 last_day as (
@@ -47,10 +47,10 @@ filtered as (
             *
        from joined
       where data = (select max_date from last_day)
-),
+)
 
 -- Select
-     select
+     select 
             data
           , ticker
           , preco_fechamento

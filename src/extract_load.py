@@ -29,10 +29,9 @@ engine = create_engine(DATABASE_URL)
 # CL=F ==> Petroleo
 # GC=F ==> Ouro
 # SI=F ==> Prata
-commodities = ['CL=F', 'GC=F', 'SI=F'] #EQTL3
 
-
-
+commodities = ['CL=F', 'GC=F', 'SI=F'] 
+ 
 def buscar_dados_commodities(simbolo, periodo = '1mo', intervalo = '1d'):
     ticker = yf.Ticker(simbolo)
     dados = ticker.history(period = periodo, interval = intervalo)[['Close']]

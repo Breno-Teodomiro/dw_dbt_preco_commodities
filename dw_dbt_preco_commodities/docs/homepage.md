@@ -6,6 +6,31 @@
 
 Este projeto utiliza DBT
 
+''' mermaid
+
+flowchart TD
+A[Extrair Dados de Commodities] --> B[Transformar Dados]
+B --> C[Carregar no PostgreSQL]
+
+    subgraph Extrair
+        A1[buscar_dados_commodities]
+        A2[buscar_todos_dados_commodities]
+        A1 --> A2
+    end
+
+    subgraph Transformar
+        T1[Filtrar coluna 'Close']
+        T2[Adicionar coluna 'simbolo']
+        A2 --> T1 --> T2
+    end
+
+    subgraph Carregar
+        C1[salvar_no_postgres]
+        T2 --> C1
+    end
+
+'''
+
 ## Estrutura do Projeto
 
 ### 1. Seeds
